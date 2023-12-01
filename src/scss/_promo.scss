@@ -1,0 +1,130 @@
+.promo {
+    position: relative;
+    margin-top: 130px;
+    min-height: 516px;
+    height: auto;
+    margin-bottom: 90px;
+    overflow: hidden;
+    @media screen and (max-width: 1024px) {
+        min-height: auto;
+    }
+    &__picture {
+        z-index: -1;
+        position: absolute;
+        right: 0;
+        bottom: -5px;
+        max-width: 50%;
+        width: 100%;
+        background-color: $bg;
+        img {
+            width: 710px;
+            height: 516px;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__title {
+        margin-top: 33px;
+    }
+
+    &__text {
+        line-height: 150%;
+        font-size: 18px;
+        margin-bottom: 30px;
+        max-width: 545px;
+
+        width: 100%;
+    }
+
+    &__link {
+        margin-bottom: 46px;
+        max-width: 263px;
+        width: 100%;
+    }
+
+    &__supports {
+        display: flex;
+        gap: 0 10px;
+    }
+
+    &__supports-link {
+        display: inline-block;
+        width: 164px;
+        height: 60px;
+        position: relative;
+        &:hover {
+            img {
+                &:last-of-type {
+                    opacity: 0;
+                }
+                &:last-of-type {
+                    opacity: 1;
+                }
+            }
+        }
+        img {
+            top: 50%;
+            left: 50%;
+            // @include transition;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            // object-fit: cover;
+            object-position: center;
+            &:last-of-type {
+                opacity: 1;
+            }
+            &:last-of-type {
+                opacity: 0;
+            }
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        &__title {
+            text-align: center;
+            br {
+                display: none;
+            }
+        }
+        &__container {
+            align-items: center;
+        }
+        &__text {
+            text-align: center;
+        }
+        &__picture {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        &__title {
+            font-size: 40px;
+        }
+        &__supports {
+            width: 100%;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        &__supports-link {
+            width: 120px;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        &__title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        &__text {
+            font-size: 17px;
+        }
+        &__link {
+            max-width: 100%;
+        }
+    }
+}

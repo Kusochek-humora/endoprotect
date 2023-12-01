@@ -1,0 +1,259 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #364452;
+
+    font-family: "Onest", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: 400;
+}
+form {
+    margin: 0;
+}
+fieldset {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+address {
+    font-style: inherit;
+}
+p {
+    margin: 0;
+}
+
+ul,
+ol,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    display: block;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+input {
+    border: inherit;
+    padding: 0;
+    margin: 0;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.main {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex: 0 0 auto;
+}
+
+.container {
+    max-width: 1150px;
+    width: 100%;
+    padding: 0 20px 0;
+    margin: 0 auto;
+}
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+.reset-button {
+    margin: 0;
+    border: 0;
+    border: 1px solid black;
+    padding: 0;
+    font-family: inherit;
+    text-align: left;
+    // font-size: 1em;
+    color: inherit;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    &:disabled {
+        cursor: default;
+    }
+}
+figure,
+figcaption {
+    margin: 0;
+    padding: 0;
+}
+.title,
+.sub-title {
+    font-weight: 700;
+    color: #364452;
+}
+.sub-title {
+    font-size: 40px;
+    @media screen and (max-width: 768px) {
+        font-size: 36px;
+    }
+    @media screen and (max-width: 500px) {
+        font-size: 32px;
+    }
+}
+.title {
+    font-size: 55px;
+}
+.text {
+    color: #53606c;
+}
+// .container-fluid{
+//     max-width: 100%;
+// 	margin: 0 auto;
+// }
+.button {
+    font-size: 16px;
+    border-radius: 10px;
+    background-color: $green;
+    color: $white;
+    padding: 10px;
+    @include flex-center;
+    @include transition;
+    min-height: 50px;
+    height: auto;
+    &:hover {
+        background-color: #53606c;
+    }
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 200;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    max-width: 423px;
+    width: 100%;
+    height: auto;
+    &__wrapper {
+        padding: 40px 30px 50px 30px;
+        background-color: $white;
+        border-radius: 20px;
+    }
+    @include transition;
+    visibility: hidden;
+    opacity: 0;
+    &.active {
+        opacity: 1;
+        // background: rgba(54, 68, 82, 0.3);
+        visibility: visible;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    z-index: 150;
+    top: 10px;
+    right: 10px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+
+    &__title {
+        font-size: 28px;
+        font-weight: 700;
+    }
+    &__ipt,
+    &__textarea {
+        border-radius: 10px;
+        border: 1px solid #e5ecf2;
+        padding: 16px;
+        background: #f0f7fd;
+
+        &::placeholder {
+            color: #a2b5c5;
+            font-size: 14px;
+        }
+    }
+    &__ipt {
+        @include transition;
+        &:valid {
+            border: 1px solid $green;
+        }
+        // &:invalid{
+        //     border: 1px solid rgba($color: rgb(238, 53, 53), $alpha: 1.0);
+        // }
+    }
+
+    &__textarea {
+        resize: vertical;
+        min-height: 91px;
+        height: auto;
+        transition: 0.4s border;
+    }
+    &__submit,
+    &__ipt,
+    &__textarea {
+        outline: none;
+        width: 100%;
+
+        &:focus {
+            border: 1px solid $black;
+        }
+    }
+    // &__submit {
+    // }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background: rgba(54, 68, 82, 0);
+    visibility: hidden;
+    &.active {
+        background: rgba(54, 68, 82, 0.3);
+        visibility: visible;
+    }
+    @include transition;
+}
+section {
+    scroll-margin-top: 200px;
+}

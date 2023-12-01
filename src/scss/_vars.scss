@@ -1,0 +1,20 @@
+@mixin font($a, $b) {
+    font-size: $a;
+    line-height: $b;
+    // font-weight: $c;
+    // color: $d;
+}
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// $black: #424242;
+$white: #fff;
+$bg: #f0f7fd;
+$green: #37c871;
+$black: #364452;
+@mixin transition($c: 0.4s, $d: all) {
+    transition: $c $d;
+}
